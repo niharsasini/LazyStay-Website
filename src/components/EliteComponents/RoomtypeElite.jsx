@@ -51,7 +51,7 @@ const RoomtypeElite = () => {
     },
     {
       id: 2,
-      name: "Deluxe Room (Maple)",
+      name: "Deluxe Room",
       size: "250 sq.ft.",
       price: 2150,
       refundable: false,

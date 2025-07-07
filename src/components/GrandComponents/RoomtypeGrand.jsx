@@ -26,7 +26,7 @@ const RoomtypeGrand = () => {
   const roomData = [
     {
       id: 1,
-      name: "Deluxe Room (MAPLE)",
+      name: "Deluxe Room ",
       size: "210sq.ft.",
       bedType: "King Bed",
       refundable: true,
@@ -50,7 +50,7 @@ const RoomtypeGrand = () => {
     },
     {
       id: 2,
-      name: "Standard Room (OAK)",
+      name: "Standard Room",
       size: "180 sq.ft.",
       refundable: false,
       guests: 2,
@@ -74,7 +74,7 @@ const RoomtypeGrand = () => {
     },
     {
       id: 3,
-      name: "Economy Room (ACACIA)",
+      name: "Economy Room ",
       size: "120 sq.ft.",
       bedType: "Queen Bed",
       refundable: true,
