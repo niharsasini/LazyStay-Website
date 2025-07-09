@@ -149,22 +149,22 @@ const Amenities = ({ id }) => {
 
   return (
     <section id={id} className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-blue-900 mb-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-3">
           Exclusive Amenities
         </h2>
-        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-sm sm:text-base">
           Discover our curated selection of luxurious amenities crafted for
           comfort, convenience, and indulgence.
         </p>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {amenities.map((amenity) => (
             <div
               key={amenity.id}
               className="bg-gray-50 rounded-2xl shadow hover:shadow-lg transition-all overflow-hidden flex flex-col"
             >
-              <div className="relative h-48 w-full overflow-hidden rounded-t-2xl">
+              <div className="relative h-48 sm:h-56 w-full overflow-hidden rounded-t-2xl">
                 <img
                   src={amenity.image}
                   alt={amenity.name}
@@ -176,11 +176,11 @@ const Amenities = ({ id }) => {
                 />
               </div>
 
-              <div className="p-5 flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold text-blue-900 mb-2">
+              <div className="p-4 sm:p-5 flex flex-col flex-grow">
+                <h3 className="text-lg sm:text-xl font-semibold text-blue-900 mb-2">
                   {amenity.name}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-gray-600 text-sm sm:text-base mb-4">
                   {amenity.description}
                 </p>
 
@@ -204,7 +204,7 @@ const Amenities = ({ id }) => {
                       setSelectedAmenity(amenity);
                       openModal("general");
                     }}
-                    className="w-full bg-blue-900 text-white py-2 rounded-md hover:bg-blue-800 transition"
+                    className="w-full bg-blue-900 text-white py-2 rounded-md hover:bg-blue-800 transition text-sm sm:text-base"
                   >
                     Send Enquiry
                   </button>
@@ -214,8 +214,8 @@ const Amenities = ({ id }) => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-gray-700 text-lg mb-5 font-medium">
+        <div className="mt-16 text-center px-4">
+          <p className="text-gray-700 text-base sm:text-lg font-medium">
             Experience effortless luxury at every step of your stay.
           </p>
         </div>

@@ -69,13 +69,13 @@ const AboutUs = () => {
 
   return (
     <div className="py-16 bg-white text-gray-800">
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <h1 className="text-5xl font-bold font-serif mb-4 text-blue-900">
+          <h1 className="text-3xl sm:text-5xl font-bold font-serif mb-4 text-blue-900">
             Our Story
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             Discover how LazyStay redefined hospitality through luxury,
             innovation, and warmth.
           </p>
@@ -84,18 +84,18 @@ const AboutUs = () => {
         {/* Vision & Mission */}
         <div className="grid md:grid-cols-2 gap-10 mb-20">
           <div
-            className="bg-gradient-to-br from-white via-blue-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300"
+            className="bg-gradient-to-br from-white via-blue-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition"
             data-aos="fade-right"
           >
-            <h2 className="text-4xl font-bold text-blue-900 mb-5 tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-bold text-blue-900 mb-4">
               Our Vision
             </h2>
-            <p className="text-gray-700 text-lg leading-relaxed mb-4">
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-3">
               At LazyStay, we envision a world where hospitality goes beyond
               luxury — becoming a lifestyle of comfort, connection, and curated
               experiences.
             </p>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
               Our goal is to create immersive spaces that not only pamper our
               guests but inspire them — blending personalized care with
               cutting-edge innovation, and redefining what it means to feel at
@@ -104,18 +104,18 @@ const AboutUs = () => {
           </div>
 
           <div
-            className="bg-gradient-to-br from-white via-blue-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300"
+            className="bg-gradient-to-br from-white via-blue-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition"
             data-aos="fade-left"
           >
-            <h2 className="text-4xl font-bold text-blue-900 mb-5 tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-bold text-blue-900 mb-4">
               Our Mission
             </h2>
-            <p className="text-gray-700 text-lg leading-relaxed mb-4">
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-3">
               To craft exceptional hospitality experiences rooted in warmth,
               personalization, and mindful sustainability — ensuring every guest
               feels genuinely valued and cared for.
             </p>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
               From the moment you arrive to the time you depart, our mission is
               to make your stay unforgettable by anticipating needs, exceeding
               expectations, and creating memories that linger long after your
@@ -127,7 +127,7 @@ const AboutUs = () => {
         {/* Our Journey */}
         <div className="mb-24">
           <h2
-            className="text-4xl font-bold font-serif text-center mb-16 text-blue-900 tracking-tight"
+            className="text-2xl sm:text-4xl font-bold font-serif text-center mb-16 text-blue-900"
             data-aos="fade-up"
           >
             Our Journey
@@ -143,17 +143,17 @@ const AboutUs = () => {
                 data-aos="fade-up"
               >
                 {/* Text Content */}
-                <div className="md:w-1/2 p-6">
-                  <span className="text-sm font-medium bg-blue-100 text-blue-900 px-4 py-1 rounded-full mb-4 inline-block shadow-sm">
+                <div className="md:w-1/2 p-4 sm:p-6">
+                  <span className="text-xs sm:text-sm font-medium bg-blue-100 text-blue-900 px-3 py-1 rounded-full mb-3 inline-block shadow-sm">
                     {item.year}
                   </span>
-                  <h3 className="text-3xl font-semibold text-blue-800 mb-4">
+                  <h3 className="text-xl sm:text-3xl font-semibold text-blue-800 mb-3">
                     {item.title}
                   </h3>
                   {item.description.map((text, i) => (
                     <p
                       key={i}
-                      className="text-gray-700 text-lg mb-3 leading-relaxed"
+                      className="text-gray-700 text-base sm:text-lg mb-2 leading-relaxed"
                     >
                       {text}
                     </p>
@@ -161,7 +161,7 @@ const AboutUs = () => {
                 </div>
 
                 {/* Image Content */}
-                <div className="md:w-1/2 p-6">
+                <div className="md:w-1/2 p-4 sm:p-6">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -169,7 +169,7 @@ const AboutUs = () => {
                       e.target.onerror = null;
                       e.target.src = item.fallback;
                     }}
-                    className="w-full h-80 object-cover rounded-2xl shadow-xl hover:shadow-2xl transition duration-300"
+                    className="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-xl hover:shadow-2xl transition"
                   />
                 </div>
               </div>
@@ -180,15 +180,15 @@ const AboutUs = () => {
         {/* Leadership Team */}
         <div className="mb-20">
           <h2
-            className="text-3xl font-serif text-center mb-12 text-blue-900"
+            className="text-2xl sm:text-3xl font-serif text-center mb-12 text-blue-900"
             data-aos="fade-up"
           >
             Leadership Team
           </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {team.map((member, idx) => (
               <div key={idx} className="text-center" data-aos="zoom-in">
-                <div className="mb-4 w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-800 shadow-md hover:shadow-xl transition">
+                <div className="mb-4 w-32 sm:w-40 h-32 sm:h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-800 shadow-md hover:shadow-xl transition">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -199,10 +199,10 @@ const AboutUs = () => {
                     }}
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
                   {member.name}
                 </h3>
-                <p className="text-gray-500">{member.position}</p>
+                <p className="text-gray-500 text-sm">{member.position}</p>
               </div>
             ))}
           </div>
@@ -210,17 +210,17 @@ const AboutUs = () => {
 
         {/* Call to Action */}
         <div
-          className="text-center bg-blue-900 text-white p-12 rounded-3xl shadow-lg"
+          className="text-center bg-blue-900 text-white p-8 sm:p-12 rounded-3xl shadow-lg"
           data-aos="fade-up"
         >
-          <h2 className="text-3xl font-serif mb-4">
+          <h2 className="text-xl sm:text-3xl font-serif mb-4">
             Experience the LazyStay Difference
           </h2>
-          <p className="mb-8 max-w-xl mx-auto text-white/90">
+          <p className="mb-6 sm:mb-8 max-w-xl mx-auto text-white/90 text-sm sm:text-base">
             Join thousands who’ve made LazyStay their favorite retreat. We can’t
             wait to host you.
           </p>
-          <button className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-full flex items-center gap-2 mx-auto hover:bg-gray-100 transition">
+          <button className="bg-white text-blue-900 font-semibold px-5 py-2 sm:px-6 sm:py-3 rounded-full flex items-center gap-2 mx-auto hover:bg-gray-100 transition text-sm sm:text-base">
             Book Your Stay Today <FaArrowRight />
           </button>
         </div>

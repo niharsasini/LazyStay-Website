@@ -91,20 +91,20 @@ const ContactUs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-serif text-blue-900 font-bold mb-4">
+          <h1 className="text-4xl sm:text-5xl font-serif text-blue-900 font-bold mb-4">
             Get in Touch
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             We'd love to hear from you! Whether you have a question about rooms,
             amenities, bookings, or anything else—our team is ready to answer.
           </p>
         </div>
 
         {/* Contact Form + Location Info */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-2xl shadow-xl border border-blue-100 transition hover:shadow-2xl">
-            <h2 className="text-3xl font-serif font-semibold text-blue-900 mb-6">
+          <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-blue-100 transition hover:shadow-2xl">
+            <h2 className="text-2xl sm:text-3xl font-serif font-semibold text-blue-900 mb-6">
               Send Us a Message
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -181,7 +181,7 @@ const ContactUs = () => {
           {/* Location Info */}
           <div className="space-y-10">
             <div>
-              <h2 className="text-3xl font-serif font-semibold text-blue-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-serif font-semibold text-blue-900 mb-4">
                 Our Locations
               </h2>
               <div className="space-y-6">
@@ -211,31 +211,36 @@ const ContactUs = () => {
             </div>
 
             <div className="bg-blue-900 text-white p-6 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">
                 Reservation Hotline
               </h3>
-              <p className="text-2xl font-bold mb-2">+91 845007723</p>
+              <p className="text-xl sm:text-2xl font-bold mb-2">
+                +91 845007723
+              </p>
               <p className="text-sm opacity-90 mb-4">
                 24/7 assistance for bookings
               </p>
-              <h3 className="text-lg font-semibold">Corporate Office</h3>
-              <p>LazyStay Hospitality Pvt. Ltd.</p>
-              <p>
+              <h3 className="text-base sm:text-lg font-semibold">
+                Corporate Office
+              </h3>
+              <p className="text-sm">
+                LazyStay Hospitality Pvt. Ltd.
+                <br />
                 Lazystay Grand, Biggies Berger Building, KIIT Rd, near Axis
                 Bank, Patia, Bhubaneswar, Odisha 751024
               </p>
-              <p className="mt-2">📧 sales@lazystay.com</p>
+              <p className="mt-2 text-sm">📧 sales@lazystay.com</p>
             </div>
           </div>
         </div>
 
         {/* Google Map */}
         <div className="mt-20">
-          <h2 className="text-3xl font-serif text-center mb-8 text-blue-900">
+          <h2 className="text-2xl sm:text-3xl font-serif text-center mb-8 text-blue-900">
             Find Us on the Map
           </h2>
           <div className="flex justify-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl w-full max-w-4xl h-[500px] border-2 border-blue-200">
+            <div className="rounded-2xl overflow-hidden shadow-2xl w-full max-w-4xl h-[400px] sm:h-[500px] border-2 border-blue-200">
               <iframe
                 title="Hotel Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14986.24098645565!2d85.82442417701514!3d20.354731264600063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a75ea6e52c3f%3A0x54bda720154e94c4!2sTreebo%20Trip%20LazyStay%20Grand%20Patia!5e0!3m2!1sen!2sin!4v1719140226935!5m2!1sen!2sin"
@@ -254,7 +259,7 @@ const ContactUs = () => {
   );
 };
 
-// Global style injection for input-style class
+// Input style injection
 const inputStyle = `
   .input-style {
     width: 100%;
@@ -267,7 +272,7 @@ const inputStyle = `
   }
   .input-style:focus {
     outline: none;
-    ring: 2px solid #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
     border-color: #2563eb;
   }
 `;
