@@ -26,48 +26,44 @@ const Topbar = () => {
 
   return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 text-sm">
-        {/* Left: Contact Info */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 text-center sm:text-left">
-          <div className="flex items-center gap-2 text-red-600">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3 flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0">
+        {/* Contact Info */}
+        <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-6 w-full md:w-auto">
+          <div className="flex items-center gap-1 text-red-600 text-xs">
             <i className="fas fa-phone-alt" />
-            <span className="text-gray-700 font-medium text-xs sm:text-sm">
-              (+91) 8455007723
-            </span>
+            <span className="text-gray-700 font-medium">(+91) 8455007723</span>
           </div>
-          <div className="hidden sm:block w-[1px] h-4 bg-gray-300" />
-          <div className="flex items-center gap-2 text-red-600">
+
+          <div className="hidden md:block w-[1px] h-4 bg-gray-300" />
+
+          <div className="flex items-center gap-1 text-red-600 text-xs">
             <i className="fas fa-envelope" />
-            <span className="text-gray-700 font-medium text-xs sm:text-sm">
+            <span className="text-gray-700 font-medium">
               sales@lazystay.com
             </span>
           </div>
         </div>
 
-        {/* Right: Socials, Booking, Search */}
-        <div className="flex items-center gap-4 relative">
+        {/* Social + CTA + Search */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-2 w-full md:w-auto relative">
           {/* Social Icons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 text-sm">
             <button
               onClick={() =>
                 window.open("https://www.facebook.com/lazystay", "_blank")
               }
-              className="text-gray-500 hover:text-red-600 transition"
-              aria-label="Facebook"
+              className="text-gray-500 hover:text-red-600"
             >
               <i className="fab fa-facebook-f" />
             </button>
-
             <button
               onClick={() =>
                 window.open("https://twitter.com/lazystayhotels", "_blank")
               }
-              className="text-gray-500 hover:text-red-600 transition"
-              aria-label="Twitter"
+              className="text-gray-500 hover:text-red-600"
             >
               <i className="fab fa-twitter" />
             </button>
-
             <button
               onClick={() =>
                 window.open(
@@ -75,22 +71,18 @@ const Topbar = () => {
                   "_blank"
                 )
               }
-              className="text-gray-500 hover:text-red-600 transition text-lg"
-              aria-label="Instagram"
+              className="text-gray-500 hover:text-red-600 text-base"
             >
               <RiInstagramFill />
             </button>
-
             <button
               onClick={() =>
                 window.open("https://www.youtube.com/@lazystay", "_blank")
               }
-              className="text-gray-500 hover:text-red-600 transition text-lg"
-              aria-label="YouTube"
+              className="text-gray-500 hover:text-red-600"
             >
               <i className="fab fa-youtube" />
             </button>
-
             <button
               onClick={() =>
                 window.open(
@@ -98,22 +90,19 @@ const Topbar = () => {
                   "_blank"
                 )
               }
-              className="text-gray-500 hover:text-red-600 transition text-lg"
-              aria-label="Google"
+              className="text-gray-500 hover:text-red-600"
             >
               <i className="fab fa-google" />
             </button>
           </div>
 
-          {/* Booking CTA */}
+          {/* Explore Hotels Button */}
           <button
             onClick={() => {
               const section = document.getElementById("hotels");
-              if (section) {
-                section.scrollIntoView({ behavior: "smooth" });
-              }
+              if (section) section.scrollIntoView({ behavior: "smooth" });
             }}
-            className="hidden sm:inline-block bg-[#d2a76c] hover:bg-[#c6975d] text-white font-semibold text-xs sm:text-sm px-4 py-1 rounded uppercase"
+            className="w-full sm:w-auto bg-[#d2a76c] hover:bg-[#c6975d] text-white font-semibold text-xs px-4 py-1 sm:py-1.5 rounded uppercase"
           >
             Explore Hotels
           </button>
@@ -121,15 +110,15 @@ const Topbar = () => {
           {/* Search Icon */}
           <button
             onClick={() => setShowSearch(!showSearch)}
-            className="text-gray-600 hover:text-[#d2a76c] transition"
+            className="text-gray-600 hover:text-[#d2a76c] transition self-start sm:self-center"
             aria-label="Search"
           >
-            <FiSearch size={18} />
+            <FiSearch size={16} />
           </button>
 
           {/* Search Dropdown */}
           {showSearch && (
-            <div className="absolute top-12 right-0 w-64 bg-white border rounded-lg shadow-lg p-4 z-50">
+            <div className="absolute top-12 right-0 w-full sm:w-64 bg-white border rounded-lg shadow-lg p-3 z-50">
               <input
                 type="text"
                 value={searchTerm}
