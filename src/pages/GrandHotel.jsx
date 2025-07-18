@@ -102,7 +102,7 @@ const GrandHotel = () => {
     <div>
       <main className="bg-white">
         {/* Hero Section */}
-        <section className="relative h-[70vh]">
+        <section className="relative h-[80vh]">
           <div className="absolute inset-0">
             <img
               src="/assets/images/hero.jpg"
@@ -113,26 +113,22 @@ const GrandHotel = () => {
               }}
             />
           </div>
-
-          {/* Top-left Info Box */}
-          <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20 bg-black/60 rounded-lg shadow-md p-4 max-w-full md:max-w-md w-[90%] sm:w-auto">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white">
+          <div className="absolute top-6 left-6 z-20 rounded-lg shadow-md p-4 max-w-md">
+            <h2 className="text-xl md:text-2xl font-bold text-white m-0">
               Lazystay Grand Patia
             </h2>
-            <div className="flex flex-col sm:flex-row sm:items-center text-sm text-white gap-2 mt-2 flex-wrap">
-              <div className="flex items-start gap-1">
-                <IoLocationSharp className="text-blue-400 mt-[3px]" />
-                <p className="text-[14px] sm:text-[15px] font-medium">
-                  Near KIIT College, Patia, Bhubaneswar
-                </p>
-              </div>
+            <div className="flex items-start text-sm text-gray-700 gap-1 flex-wrap mt-2">
+              <IoLocationSharp className="text-blue-600 mt-0.5" />
+              <p className="text-[15px] font-medium text-white m-0">
+                Near KIIT College, Patia, Bhubaneswar
+              </p>
               <a
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
                   openMap();
                 }}
-                className="text-white text-sm flex items-center gap-1 font-medium sm:ml-4"
+                className="text-white text-sm flex items-center gap-1 font-medium ml-5"
               >
                 <img
                   src="https://images.treebohotels.com/images/map.svg"
@@ -143,28 +139,28 @@ const GrandHotel = () => {
               </a>
             </div>
           </div>
-
-          {/* Top-right Rating */}
-          <div className="absolute top-4 right-4 md:top-6 md:right-6 z-20 bg-black/60 rounded-lg p-3 flex items-center gap-3 sm:flex-row flex-col sm:items-center sm:gap-3 w-max">
-            <div className="w-[58px] h-[35px] border bg-[#009057] rounded-[8px] text-white flex items-center justify-center gap-1 text-sm font-bold">
-              4.3 <FaStar className="text-white text-xs mt-[1px]" />
+          <div className="absolute top-6 right-6 z-20">
+            <div className="flex items-center gap-3 p-3">
+              <div className="w-[58px] h-[35px] border bg-[#009057] rounded-[8px] text-white flex items-center justify-center gap-1 text-sm font-bold">
+                4.3 <FaStar className="text-white text-xs mt-[1px]" />
+              </div>
+              <div>
+                <div className="text-[14px] font-bold text-white">
+                  Very Good
+                </div>
+                <div className="text-sm text-white">406 ratings</div>
+              </div>
+              <button className="text-white">
+                <FaShareAlt className="text-lg" />
+              </button>
             </div>
-            <div className="text-white text-center sm:text-left">
-              <div className="text-[14px] font-bold">Very Good</div>
-              <div className="text-sm">406 ratings</div>
-            </div>
-            <button className="text-white">
-              <FaShareAlt className="text-lg" />
-            </button>
           </div>
-
-          {/* Centered Hero Text */}
           <div className="relative z-10 flex items-center justify-center h-full text-center px-4">
             <div>
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-white mb-4">
+              <h1 className="text-5xl md:text-7xl font-serif text-white mb-4">
                 LazyStay Grand
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
                 Where luxury meets exceptional hospitality
               </p>
             </div>
