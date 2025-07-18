@@ -36,38 +36,38 @@ const Homecomponent = () => {
         stopOnHover={false}
       >
         {slides.map((slide, idx) => (
-          <div key={idx} className="relative h-[80vh] w-full">
+          <div key={idx} className="relative h-[60vh] sm:h-[80vh] w-full">
             <img
               src={slide.image}
               alt={`Slide ${idx}`}
               className="absolute inset-0 h-full w-full object-cover z-0"
             />
 
-            <div className="relative z-20 h-full flex flex-col items-center justify-center text-center text-white px-4 sm:px-6">
-              <h2 className="text-sm sm:text-base md:text-2xl font-light mb-1 tracking-wide">
+            <div className="relative z-20 h-full flex flex-col items-center justify-center text-center text-white px-3 sm:px-6">
+              <h2 className="text-[12px] sm:text-base md:text-2xl font-light mb-1 tracking-wide">
                 {slide.subtitle}
               </h2>
-              <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-3 sm:mb-4">
+              <h1 className="text-xl sm:text-4xl md:text-6xl font-serif font-bold leading-tight mb-2 sm:mb-4">
                 {slide.title}
               </h1>
-              <p className="text-xs sm:text-sm md:text-lg mt-1 sm:mt-2 px-2 sm:px-0">
+              <p className="text-xs sm:text-sm md:text-lg px-1 sm:px-0">
                 {slide.desc}
               </p>
 
               {slide.badge && (
-                <div className="mt-4 sm:mt-6">
+                <div className="mt-3 sm:mt-6">
                   <img
                     src={slide.badge}
                     alt="Badge"
-                    className="h-12 sm:h-16 md:h-20 mx-auto"
+                    className="h-10 sm:h-16 md:h-20 mx-auto"
                   />
                 </div>
               )}
 
-              {/* Important Info Button */}
+              {/* Info Button */}
               <div
                 onClick={() => setShowModal(true)}
-                className="absolute bottom-5 sm:bottom-10 left-5 sm:left-10 border border-white rounded-full px-4 sm:px-6 py-2 sm:py-3 text-[10px] sm:text-xs uppercase tracking-widest hover:bg-white hover:text-black transition cursor-pointer"
+                className="absolute bottom-4 sm:bottom-10 left-4 sm:left-10 border border-white rounded-full px-4 py-1.5 sm:px-6 sm:py-3 text-[10px] sm:text-xs uppercase tracking-widest hover:bg-white hover:text-black transition cursor-pointer"
               >
                 Important Info
               </div>
@@ -78,7 +78,7 @@ const Homecomponent = () => {
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-40 flex justify-center items-center px-4 sm:px-0">
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-40 flex justify-center items-center px-4">
           <div className="bg-white w-full sm:w-[90%] max-w-2xl max-h-[80vh] overflow-y-auto p-4 sm:p-6 rounded-lg relative shadow-lg">
             <button
               onClick={() => setShowModal(false)}
@@ -87,20 +87,20 @@ const Homecomponent = () => {
               <IoClose />
             </button>
 
-            <h2 className="text-[20px] sm:text-[24px] font-bold text-[rgb(74,74,74)] mb-3 sm:mb-4">
+            <h2 className="text-[18px] sm:text-[24px] font-bold text-[rgb(74,74,74)] mb-3 sm:mb-4">
               Rules and Policies
             </h2>
 
             <div className="space-y-3 sm:space-y-4 text-gray-700 text-xs sm:text-sm">
               <div>
-                <strong className="text-[13px] sm:text-[14px] font-semibold text-[rgb(22,60,53)]">
+                <strong className="font-semibold text-[13px] sm:text-[14px] text-[rgb(22,60,53)]">
                   Couple Friendly
                 </strong>
                 <br />
                 Lazystay Grand Patia welcomes unmarried couples.
               </div>
               <div>
-                <strong className="text-[13px] sm:text-[14px] font-semibold text-[rgb(22,60,53)]">
+                <strong className="font-semibold text-[13px] sm:text-[14px] text-[rgb(22,60,53)]">
                   Local ID Policy
                 </strong>
                 <br />
@@ -108,14 +108,14 @@ const Homecomponent = () => {
                 card not accepted).
               </div>
               <div>
-                <strong className="text-[13px] sm:text-[14px] font-semibold text-[rgb(22,60,53)]">
+                <strong className="font-semibold text-[13px] sm:text-[14px] text-[rgb(22,60,53)]">
                   Check-in and Check-out
                 </strong>
                 <br />
                 Check-in: 01:00 pm &nbsp; Check-out: 11:00 am
               </div>
               <div>
-                <strong className="text-[13px] sm:text-[14px] font-semibold text-[rgb(22,60,53)]">
+                <strong className="font-semibold text-[13px] sm:text-[14px] text-[rgb(22,60,53)]">
                   Cancellation Policy
                 </strong>
                 <br />
@@ -125,7 +125,7 @@ const Homecomponent = () => {
                 Convenience fee is also not refundable.
               </div>
               <div>
-                <strong className="text-[13px] sm:text-[14px] font-semibold text-[rgb(22,60,53)]">
+                <strong className="font-semibold text-[13px] sm:text-[14px] text-[rgb(22,60,53)]">
                   Convenience Fee
                 </strong>
                 <br />A fee is applied for all bookings made via the app or
@@ -134,7 +134,7 @@ const Homecomponent = () => {
                 cancellation or no-show.
               </div>
               <div>
-                <strong className="text-[13px] sm:text-[14px] font-semibold text-[rgb(22,60,53)]">
+                <strong className="font-semibold text-[13px] sm:text-[14px] text-[rgb(22,60,53)]">
                   Child Reservation Policy
                 </strong>
                 <br />1 child up to 8 years and 1 infant up to 2 years are
@@ -142,7 +142,7 @@ const Homecomponent = () => {
                 above 8 years. No extra bed/mattress is provided.
               </div>
               <div>
-                <strong className="text-[13px] sm:text-[14px] font-semibold text-[rgb(22,60,53)]">
+                <strong className="font-semibold text-[13px] sm:text-[14px] text-[rgb(22,60,53)]">
                   GST Details
                 </strong>
                 <br />
