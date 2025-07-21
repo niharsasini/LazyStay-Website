@@ -27,11 +27,61 @@ const Topbar = () => {
   return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 sm:py-3 flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0">
-        {/* Contact Info */}
+        {/* Contact Info + Mobile Social Icons */}
         <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-6 w-full md:w-auto">
           <div className="flex items-center gap-1 text-red-600 text-xs">
             <i className="fas fa-phone-alt" />
             <span className="text-gray-700 font-medium">(+91) 8455007723</span>
+
+            {/* 👇 Mobile Social Icons */}
+            <div className="flex sm:hidden items-center gap-2 ml-3">
+              <button
+                onClick={() =>
+                  window.open("https://www.facebook.com/lazystay", "_blank")
+                }
+                className="text-gray-500 hover:text-red-600 text-sm"
+              >
+                <i className="fab fa-facebook-f" />
+              </button>
+              <button
+                onClick={() =>
+                  window.open("https://twitter.com/lazystayhotels", "_blank")
+                }
+                className="text-gray-500 hover:text-red-600 text-sm"
+              >
+                <i className="fab fa-twitter" />
+              </button>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/lazystayhospitality",
+                    "_blank"
+                  )
+                }
+                className="text-gray-500 hover:text-red-600 text-base"
+              >
+                <RiInstagramFill />
+              </button>
+              <button
+                onClick={() =>
+                  window.open("https://www.youtube.com/@lazystay", "_blank")
+                }
+                className="text-gray-500 hover:text-red-600 text-sm"
+              >
+                <i className="fab fa-youtube" />
+              </button>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://www.google.com/search?q=LazyStay+Hospitality",
+                    "_blank"
+                  )
+                }
+                className="text-gray-500 hover:text-red-600 text-sm"
+              >
+                <i className="fab fa-google" />
+              </button>
+            </div>
           </div>
 
           <div className="hidden md:block w-[1px] h-4 bg-gray-300" />
@@ -44,9 +94,9 @@ const Topbar = () => {
           </div>
         </div>
 
-        {/* Social + CTA + Search */}
+        {/* Social (desktop only) + CTA + Search */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-2 w-full md:w-auto relative">
-          {/* Social Icons (Hidden on mobile) */}
+          {/* Social Icons (hidden on mobile) */}
           <div className="hidden sm:flex items-center gap-2 sm:gap-3 text-sm">
             <button
               onClick={() =>
