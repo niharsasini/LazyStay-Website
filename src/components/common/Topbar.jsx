@@ -30,7 +30,7 @@ const Topbar = () => {
         {/* Contact Info + Mobile Social Icons + Search (Mobile) */}
         <div className="flex flex-col md:flex-row md:items-center gap-2 w-full md:w-auto">
           {/* Phone & Social (mobile) */}
-          <div className="flex items-center gap-1 text-red-600 text-xs">
+          <div className="flex items-center justify-between gap-1 text-red-600 text-xs">
             <i className="fas fa-phone-alt" />
             <span className="text-gray-700 font-medium">(+91) 8455007723</span>
 
