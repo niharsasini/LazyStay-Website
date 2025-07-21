@@ -12,14 +12,14 @@ const Homecomponent = () => {
       title: "Indulge in Affordable Elegance",
       subtitle: "LazyStay Grand – Experience More Than Just a Stay",
       desc: "Unwind in spacious rooms, enjoy top-class amenities, and feel the warmth of premium hospitality at a pocket-friendly price.",
-      badge: "/tripadvisor-badge.png",
+    
     },
     {
       image: "/assets/images/elite/facade/dayfacade2.jpg",
       title: "Stay Cozy. Stay Happy.",
       subtitle: "LazyStay Hotel – A Perfect Escape Awaits",
       desc: "Whether you're here for a weekend getaway or a relaxing retreat, LazyStay offers the comfort and charm you deserve at an affordable rate.",
-      badge: "/tripadvisor-badge.png",
+     
     },
   ];
 
