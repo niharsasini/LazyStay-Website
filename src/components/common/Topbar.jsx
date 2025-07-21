@@ -26,13 +26,66 @@ const Topbar = () => {
 
   return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-        {/* Left: Phone + Email (Vertical on mobile, horizontal on desktop) */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 sm:py-3 flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0">
+        {/* Contact Info + Mobile Social Icons */}
+        <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-6 w-full md:w-auto">
           <div className="flex items-center gap-1 text-red-600 text-xs">
             <i className="fas fa-phone-alt" />
             <span className="text-gray-700 font-medium">(+91) 8455007723</span>
+
+            {/* 👇 Mobile Social Icons */}
+            <div className="flex sm:hidden items-center gap-2 ml-3">
+              <button
+                onClick={() =>
+                  window.open("https://www.facebook.com/lazystay", "_blank")
+                }
+                className="text-gray-500 hover:text-red-600 text-sm"
+              >
+                <i className="fab fa-facebook-f" />
+              </button>
+              <button
+                onClick={() =>
+                  window.open("https://twitter.com/lazystayhotels", "_blank")
+                }
+                className="text-gray-500 hover:text-red-600 text-sm"
+              >
+                <i className="fab fa-twitter" />
+              </button>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/lazystayhospitality",
+                    "_blank"
+                  )
+                }
+                className="text-gray-500 hover:text-red-600 text-base"
+              >
+                <RiInstagramFill />
+              </button>
+              <button
+                onClick={() =>
+                  window.open("https://www.youtube.com/@lazystay", "_blank")
+                }
+                className="text-gray-500 hover:text-red-600 text-sm"
+              >
+                <i className="fab fa-youtube" />
+              </button>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://www.google.com/search?q=LazyStay+Hospitality",
+                    "_blank"
+                  )
+                }
+                className="text-gray-500 hover:text-red-600 text-sm"
+              >
+                <i className="fab fa-google" />
+              </button>
+            </div>
           </div>
+
+          <div className="hidden md:block w-[1px] h-4 bg-gray-300" />
+
           <div className="flex items-center gap-1 text-red-600 text-xs">
             <i className="fas fa-envelope" />
             <span className="text-gray-700 font-medium">
@@ -41,21 +94,10 @@ const Topbar = () => {
           </div>
         </div>
 
-        {/* Right: Explore + Social + Search */}
-        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 justify-end sm:justify-start w-full sm:w-auto">
-          {/* Explore Button */}
-          <button
-            onClick={() => {
-              const section = document.getElementById("hotels");
-              if (section) section.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="bg-[#d2a76c] hover:bg-[#c6975d] text-white font-semibold text-xs px-4 py-1.5 rounded uppercase"
-          >
-            Explore Hotels
-          </button>
-
-          {/* Social Icons */}
-          <div className="flex items-center gap-2 text-sm">
+        {/* Social (desktop only) + CTA + Search */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-2 w-full md:w-auto relative">
+          {/* Social Icons (hidden on mobile) */}
+          <div className="hidden sm:flex items-center gap-2 sm:gap-3 text-sm">
             <button
               onClick={() =>
                 window.open("https://www.facebook.com/lazystay", "_blank")
@@ -104,46 +146,55 @@ const Topbar = () => {
             </button>
           </div>
 
-          {/* Search Icon */}
+          {/* Explore Hotels Button */}
+          <button
+            onClick={() => {
+              const section = document.getElementById("hotels");
+              if (section) section.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="w-full sm:w-auto bg-[#d2a76c] hover:bg-[#c6975d] text-white font-semibold text-xs px-4 py-1 sm:py-1.5 rounded uppercase"
+          >
+            Explore Hotels
+          </button>
+
+          {/* Search Icon (Hidden on mobile) */}
           <button
             onClick={() => setShowSearch(!showSearch)}
-            className="text-gray-600 hover:text-[#d2a76c] transition"
+            className="hidden sm:block text-gray-600 hover:text-[#d2a76c] transition"
             aria-label="Search"
           >
             <FiSearch size={16} />
           </button>
+
+          {/* Search Dropdown */}
+          {showSearch && (
+            <div className="absolute top-12 right-0 w-full sm:w-64 bg-white border rounded-lg shadow-lg p-3 z-50">
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search hotels..."
+                className="w-full border px-3 py-2 rounded text-sm mb-2 outline-none focus:ring-2 focus:ring-[#d2a76c]"
+              />
+              <ul className="max-h-40 overflow-y-auto text-sm">
+                {filteredResults.length > 0 ? (
+                  filteredResults.map((hotel, index) => (
+                    <li
+                      key={index}
+                      onClick={() => handleHotelClick(hotel.path)}
+                      className="py-2 px-3 hover:bg-gray-100 cursor-pointer rounded"
+                    >
+                      {hotel.name}
+                    </li>
+                  ))
+                ) : (
+                  <li className="py-2 px-3 text-gray-400">No results found</li>
+                )}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
-
-      {/* Search Dropdown */}
-      {showSearch && (
-        <div className="px-4 sm:px-6 lg:px-8 py-3 bg-white border-t border-gray-300">
-          <div className="max-w-7xl mx-auto">
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search hotels..."
-              className="w-full sm:w-72 border px-3 py-2 rounded text-sm outline-none focus:ring-2 focus:ring-[#d2a76c]"
-            />
-            <ul className="max-h-40 overflow-y-auto mt-2 text-sm">
-              {filteredResults.length > 0 ? (
-                filteredResults.map((hotel, index) => (
-                  <li
-                    key={index}
-                    onClick={() => handleHotelClick(hotel.path)}
-                    className="py-2 px-3 hover:bg-gray-100 cursor-pointer rounded"
-                  >
-                    {hotel.name}
-                  </li>
-                ))
-              ) : (
-                <li className="py-2 px-3 text-gray-400">No results found</li>
-              )}
-            </ul>
-          </div>
-        </div>
-      )}
     </header>
   );
 };
