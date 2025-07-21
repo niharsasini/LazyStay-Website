@@ -27,8 +27,9 @@ const Topbar = () => {
   return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 sm:py-3 flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0">
-        {/* Contact Info + Mobile Social Icons */}
-        <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-6 w-full md:w-auto">
+        {/* Contact Info + Mobile Social Icons + Search (Mobile) */}
+        <div className="flex flex-col md:flex-row md:items-center gap-2 w-full md:w-auto">
+          {/* Phone & Social (mobile) */}
           <div className="flex items-center gap-1 text-red-600 text-xs">
             <i className="fas fa-phone-alt" />
             <span className="text-gray-700 font-medium">(+91) 8455007723</span>
@@ -84,17 +85,29 @@ const Topbar = () => {
             </div>
           </div>
 
+          {/* Divider */}
           <div className="hidden md:block w-[1px] h-4 bg-gray-300" />
 
-          <div className="flex items-center gap-1 text-red-600 text-xs">
-            <i className="fas fa-envelope" />
-            <span className="text-gray-700 font-medium">
-              sales@lazystay.com
-            </span>
+          {/* Email + Search (mobile inline) */}
+          <div className="flex items-center justify-between gap-2 text-red-600 text-xs w-full sm:w-auto">
+            <div className="flex items-center gap-1">
+              <i className="fas fa-envelope" />
+              <span className="text-gray-700 font-medium">
+                sales@lazystay.com
+              </span>
+            </div>
+            {/* 👇 Search icon always visible now on mobile */}
+            <button
+              onClick={() => setShowSearch(!showSearch)}
+              className="sm:hidden text-gray-600 hover:text-[#d2a76c] transition"
+              aria-label="Search"
+            >
+              <FiSearch size={16} />
+            </button>
           </div>
         </div>
 
-        {/* Social (desktop only) + CTA + Search */}
+        {/* Social (desktop only) + CTA + Search (desktop only) */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-2 w-full md:w-auto relative">
           {/* Social Icons (hidden on mobile) */}
           <div className="hidden sm:flex items-center gap-2 sm:gap-3 text-sm">
@@ -157,7 +170,7 @@ const Topbar = () => {
             Explore Hotels
           </button>
 
-          {/* Search Icon (Hidden on mobile) */}
+          {/* Search Icon (desktop only) */}
           <button
             onClick={() => setShowSearch(!showSearch)}
             className="hidden sm:block text-gray-600 hover:text-[#d2a76c] transition"
