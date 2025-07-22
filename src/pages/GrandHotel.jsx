@@ -102,33 +102,38 @@ const GrandHotel = () => {
     <div>
       <main className="bg-white">
         {/* Hero Section */}
-        <section className="relative h-[80vh]">
+        <section className="relative h-[70vh] md:h-[80vh]">
+          {/* Background Image */}
           <div className="absolute inset-0">
             <img
               src="/assets/images/hero.jpg"
               alt="LazyStay Grand"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center brightness-90"
               onError={(e) => {
                 e.target.src = "/assets/images/placeholder.jpg";
               }}
             />
           </div>
-          <div className="absolute top-6 left-6 z-20 rounded-lg shadow-md p-4 max-w-md">
-            <h2 className="text-xl md:text-2xl font-bold text-white m-0">
+
+          {/* Top-left: Hotel Info */}
+          <div className="absolute top-2 left-2 sm:top-6 sm:left-6 z-20 bg-black bg-opacity-50 rounded-lg shadow-md p-3 sm:p-4 max-w-xs sm:max-w-md">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white m-0">
               Lazystay Grand Patia
             </h2>
-            <div className="flex items-start text-sm text-gray-700 gap-1 flex-wrap mt-2">
-              <IoLocationSharp className="text-blue-600 mt-0.5" />
-              <p className="text-[15px] font-medium text-white m-0">
-                Near KIIT College, Patia, Bhubaneswar
-              </p>
+            <div className="flex flex-col sm:flex-row sm:items-center text-xs sm:text-sm text-white gap-1 sm:gap-2 mt-2">
+              <div className="flex items-center gap-1">
+                <IoLocationSharp className="text-blue-400 mt-[1px]" />
+                <p className="text-white m-0 font-medium text-[13px] sm:text-[15px]">
+                  Near KIIT College, Patia, Bhubaneswar
+                </p>
+              </div>
               <a
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
                   openMap();
                 }}
-                className="text-white text-sm flex items-center gap-1 font-medium ml-5"
+                className="text-white text-xs sm:text-sm font-medium flex items-center gap-1 mt-1 sm:mt-0"
               >
                 <img
                   src="https://images.treebohotels.com/images/map.svg"
@@ -139,28 +144,33 @@ const GrandHotel = () => {
               </a>
             </div>
           </div>
-          <div className="absolute top-6 right-6 z-20">
-            <div className="flex items-center gap-3 p-3">
-              <div className="w-[58px] h-[35px] border bg-[#009057] rounded-[8px] text-white flex items-center justify-center gap-1 text-sm font-bold">
-                4.3 <FaStar className="text-white text-xs mt-[1px]" />
+
+          {/* Top-right: Rating Box */}
+          <div className="absolute top-2 right-2 sm:top-6 sm:right-6 z-20">
+            <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-black bg-opacity-50 rounded-lg">
+              <div className="w-[50px] sm:w-[58px] h-[32px] sm:h-[35px] border bg-[#009057] rounded-[8px] text-white flex items-center justify-center gap-1 text-xs sm:text-sm font-bold">
+                4.3{" "}
+                <FaStar className="text-white text-[10px] sm:text-xs mt-[1px]" />
               </div>
               <div>
-                <div className="text-[14px] font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white">
                   Very Good
                 </div>
-                <div className="text-sm text-white">406 ratings</div>
+                <div className="text-xs sm:text-sm text-white">406 ratings</div>
               </div>
-              <button className="text-white">
-                <FaShareAlt className="text-lg" />
+              <button className="text-white text-base sm:text-lg">
+                <FaShareAlt />
               </button>
             </div>
           </div>
+
+          {/* Center Content */}
           <div className="relative z-10 flex items-center justify-center h-full text-center px-4">
             <div>
-              <h1 className="text-5xl md:text-7xl font-serif text-white mb-4">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-white mb-4">
                 LazyStay Grand
               </h1>
-              <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
                 Where luxury meets exceptional hospitality
               </p>
             </div>
