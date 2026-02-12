@@ -126,6 +126,9 @@ const EliteHotel = () => {
                 <IoLocationSharp className="text-blue-400 mt-[1px]" />
                 <p className="text-white m-0 font-medium text-[13px] sm:text-[15px]">
                   Near KIIT College, Patia, Bhubaneswar
+                  <span className="block text-gray sm:text-sm mt-1">
+                    Our pricing startes from Rs 2500 INR - Rs 3500 INR
+                  </span>
                 </p>
               </div>
               <a

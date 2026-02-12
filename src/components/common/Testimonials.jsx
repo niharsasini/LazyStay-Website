@@ -86,16 +86,6 @@ const Testimonials = ({ id }) => {
             </div>
           </div>
         </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-12 sm:mt-16">
-          <a
-            href="#"
-            className="inline-block bg-blue-900 text-white text-sm sm:text-base py-2.5 sm:py-3 px-6 sm:px-8 rounded-full shadow hover:bg-blue-800 transition duration-300"
-          >
-            Share Your Experience
-          </a>
-        </div>
       </div>
     </section>
   );
