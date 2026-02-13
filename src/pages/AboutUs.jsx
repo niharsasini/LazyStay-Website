@@ -209,7 +209,7 @@ const AboutUs = () => {
         </div>
 
         {/* Call to Action */}
-        <div
+        {/* <div
           className="text-center bg-blue-900 text-white p-8 sm:p-12 rounded-3xl shadow-lg"
           data-aos="fade-up"
         >
@@ -220,10 +220,8 @@ const AboutUs = () => {
             Join thousands who’ve made LazyStay their favorite retreat. We can’t
             wait to host you.
           </p>
-          <button className="bg-white text-blue-900 font-semibold px-5 py-2 sm:px-6 sm:py-3 rounded-full flex items-center gap-2 mx-auto hover:bg-gray-100 transition text-sm sm:text-base">
-            Book Your Stay Today <FaArrowRight />
-          </button>
-        </div>
+       
+        </div> */}
       </div>
     </div>
   );
